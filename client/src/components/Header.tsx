@@ -53,12 +53,12 @@ export default function Header() {
             href="https://democonexa.casadf.com.br/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline text-sm"
+            className="btn-outline text-sm" style={{fontSize: '12px', fontWeight: '500'}}
           >
             Área do Colaborador
           </a>
           <Link href="/doacoes">
-            <button className="btn-primary text-sm">
+            <button className="btn-primary text-sm" style={{fontSize: '12px'}}>
               Fazer Doação
             </button>
           </Link>
