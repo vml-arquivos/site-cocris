@@ -34,3 +34,6 @@
 - [x] Estrutura base do site
 - [x] Sistema de blog e doações
 - [x] Newsletter e contato
+
+## Correções de Bugs
+- [x] Corrigir erro de tags <a> aninhadas na página Quem Somos
