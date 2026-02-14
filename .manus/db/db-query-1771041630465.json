@@ -1,0 +1,9 @@
+{
+  "query": "\nUPDATE units SET imageUrl = '/images/units/Arara-Caninde.png' WHERE slug = 'cepi-arara-caninde';\nUPDATE units SET imageUrl = '/images/units/CEPI-FLAMBOYANT.png' WHERE slug = 'cepi-flamboyant';\nUPDATE units SET imageUrl = '/images/units/cepi-sabia-do-campo.jpg' WHERE slug = 'cepi-sabia-do-campo';\nUPDATE units SET imageUrl = '/images/units/cepi-beija-flor.jpg' WHERE slug = 'cepi-beija-flor';\nUPDATE units SET imageUrl = '/images/units/creche-rouxinol.jpg' WHERE slug = 'creche-rouxinol';\nUPDATE units SET imageUrl = '/images/units/Arara-Caninde.png' WHERE slug = 'creche-cocris';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 6QM5fqpefCB2cSG.root --database UndBHAye44ZxbMr8NusKWm --execute \nUPDATE units SET imageUrl = '/images/units/Arara-Caninde.png' WHERE slug = 'cepi-arara-caninde';\nUPDATE units SET imageUrl = '/images/units/CEPI-FLAMBOYANT.png' WHERE slug = 'cepi-flamboyant';\nUPDATE units SET imageUrl = '/images/units/cepi-sabia-do-campo.jpg' WHERE slug = 'cepi-sabia-do-campo';\nUPDATE units SET imageUrl = '/images/units/cepi-beija-flor.jpg' WHERE slug = 'cepi-beija-flor';\nUPDATE units SET imageUrl = '/images/units/creche-rouxinol.jpg' WHERE slug = 'creche-rouxinol';\nUPDATE units SET imageUrl = '/images/units/Arara-Caninde.png' WHERE slug = 'creche-cocris';\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 109
+}

@@ -24,7 +24,7 @@ export default function Header() {
         <Link href="/">
           <div className="flex items-center gap-3 font-bold text-lg hover:opacity-90 transition-opacity cursor-pointer">
             <img 
-              src="/logo-cocris.png" 
+              src="/images/logo-cocris.png" 
               alt="Logo COCRIS - Associação Beneficente Coração de Cristo" 
               className="h-14 w-auto"
             />

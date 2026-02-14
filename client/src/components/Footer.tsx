@@ -13,8 +13,8 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img 
-                src="/logo-cocris.png" 
-                alt="Logo COCRIS" 
+                src="/images/logo-cocris.png" 
+                alt="Logo COCRIS - Associação Beneficente Coração de Cristo" 
                 className="h-10 w-auto"
               />
             </div>

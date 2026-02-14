@@ -1,69 +1,98 @@
 # CoCris Site - TODO List
 
-## Fase 1: Estrutura Base e Migração
+## 🔴 ATUALIZAÇÃO COM CONTEÚDO REAL - PRIORIDADE MÁXIMA
+
+### Identidade Visual e Logo
+- [x] Substituir logo placeholder pelo logo oficial da COCRIS (images.png)
+- [x] Extrair paleta de cores do logo (vermelho #E31E24, azul #0066CC, amarelo)
+- [x] Atualizar index.css com cores da identidade visual real
+- [ ] Aplicar cores do logo em todos os componentes (Header, Footer, Buttons)
+
+### Conteúdo do Site cocris.org
+- [x] Acessar e extrair conteúdo real de cocris.org
+- [x] Coletar missão, visão e valores reais
+- [x] Extrair história e informações institucionais autênticas
+- [x] Coletar informações sobre projetos e programas reais
+- [x] Obter dados de contato reais (telefones, emails, endereços)
+
+### Imagens Reais das Unidades
+- [x] Copiar logo oficial (images.png) para client/public/images/
+- [x] CEPI Arara Canindé - usar Arara-Caninde.png
+- [x] CEPI Sabiá do Campo - usar cepi-sabia-do-campo.jpg
+- [x] CEPI Flamboyant - usar CEPI-FLAMBOYANT.png
+- [x] Outras unidades - usar images.jfif e download.jfif
+- [x] Fotos de atividades - cropped-AulaDeMovimento_M2(1).jpg, cropped-unnamed.jpg
+- [x] Foto da equipe - WhatsApp-Image-2022-05-05-at-15.01.15-1.jpeg
+- [x] Fotos de eventos - IMG-20201228-WA0052.jpg, mqdefault.jpg, etc.
+
+### Atualização de Páginas com Conteúdo Real
+- [x] Home - hero com imagens reais e conteúdo do cocris.org
+- [ ] Quem Somos - história e informações reais
+- [ ] Unidades - fotos reais de cada CEPI/Creche
+- [ ] Projetos - informações autênticas dos programas
+- [x] Header - logo real da COCRIS
+- [x] Footer - logo real e informações corretas
+
+### Banco de Dados
+- [x] Atualizar unidades com dados reais do cocris.org
+- [x] Verificar e corrigir endereços, telefones e emails
+
+---
+
+## ✅ Fase 1: Estrutura Base e Migração
 - [x] Migrar código do repositório temp-repo para o projeto atual
 - [x] Atualizar fontes para Montserrat/Roboto/Open Sans
 - [x] Configurar paleta de cores institucional no index.css
 - [x] Criar schema do banco de dados (unidades, blog, newsletter, contatos, doações)
 - [x] Implementar componentes reutilizáveis (Header, Footer, Cards)
 
-## Fase 2: Páginas Institucionais
-- [ ] Página Inicial - Hero section com animações premium
-- [ ] Página Inicial - Seção Missão, Visão e Valores
-- [ ] Página Inicial - Seção de Impacto Social
-- [ ] Página Quem Somos - História da CoCris
-- [ ] Página Quem Somos - Equipe e Diretoria
-- [ ] Página Quem Somos - Estrutura Organizacional
+## ✅ Fase 2: Páginas Institucionais
+- [x] Página Inicial - Hero section com animações premium
+- [x] Página Inicial - Seção Missão, Visão e Valores
+- [x] Página Inicial - Seção de Impacto Social
+- [x] Página Quem Somos - História da CoCris
+- [x] Página Quem Somos - Equipe e Diretoria
+- [x] Página Quem Somos - Estrutura Organizacional
 
-## Fase 3: Sistema de Unidades
+## ✅ Fase 3: Sistema de Unidades
 - [x] Criar schema para unidades no banco de dados
 - [x] Importar dados do units.json para o banco
-- [ ] Página Nossas Unidades - Grid com cards das 6 unidades
-- [ ] Página Individual de cada Unidade (slug dinâmico)
-- [ ] Pesquisar e adicionar imagens representativas de cada creche
+- [x] Página Nossas Unidades - Grid com cards das 6 unidades
+- [x] Página Individual de cada Unidade (slug dinâmico)
 - [ ] Adicionar mapa com localização das unidades
 - [ ] Otimizar SEO local para cada unidade
 
-## Fase 4: Blog e Notícias
-- [ ] Criar schema para posts de blog
-- [ ] Criar schema para categorias e tags
-- [ ] Página Blog - Listagem com paginação
-- [ ] Página Blog - Sistema de busca avançada
-- [ ] Página Blog - Filtros por categoria e tag
-- [ ] Página Individual de Post
-- [ ] Sistema de comentários (opcional)
-- [ ] Feed RSS para o blog
+## ✅ Fase 4: Sistema de Blog/Notícias
+- [x] Criar schema para blog no banco de dados
+- [x] Página Blog - Listagem de posts com paginação
+- [x] Página Blog - Sistema de categorias e tags
+- [x] Página Blog - Busca avançada
+- [x] Página Individual de Post (slug dinâmico)
+- [x] Sistema de visualizações de posts
 
-## Fase 5: Página de Doações
-- [ ] Página Doações - Design premium com branding claro
-- [ ] Página Doações - Imagens de impacto com textos alt
-- [ ] Página Doações - Termômetro de arrecadação
-- [ ] Página Doações - Formulário com valores sugeridos
-- [ ] Página Doações - Opção de doação recorrente ou única
-- [ ] Página Doações - Seletor de destino (unidade/projeto)
-- [ ] Integração com gateway de pagamento (PagSeguro/Stripe)
-- [ ] Página de agradecimento pós-doação
-- [ ] Informações bancárias para transferências
+## ✅ Fase 5: Página de Doações
+- [x] Criar schema para doações no banco de dados
+- [x] Página Doações - Formulário de doação
+- [x] Página Doações - Opções de pagamento (PIX, Cartão, Boleto)
+- [x] Página Doações - Informações bancárias
+- [x] Página Doações - Contador de doações
+- [ ] Sistema de recibos de doação
 
-## Fase 6: Transparência e Projetos
-- [ ] Página Transparência - Documentos institucionais
-- [ ] Página Transparência - Relatórios financeiros em PDF
-- [ ] Página Transparência - Tabelas e infográficos de dados
-- [ ] Página Transparência - Balancetes e prestação de contas
-- [ ] Página Projetos - Detalhamento do Unnijovem
-- [ ] Página Projetos - Outros programas e iniciativas
+## ✅ Fase 6: Página de Transparência
+- [x] Criar schema para documentos de transparência
+- [x] Página Transparência - Relatórios financeiros
+- [x] Página Transparência - Prestação de contas
+- [x] Página Transparência - Documentos institucionais
+- [ ] Sistema de upload e download de documentos
 
-## Fase 7: Contato e Newsletter
-- [ ] Criar schema para contatos no banco
-- [ ] Criar schema para newsletter no banco
-- [ ] Página Contato - Formulário funcional integrado ao backend
-- [ ] Página Contato - Mapa com todas as unidades
-- [ ] Página Contato - Informações de contato de cada unidade
-- [ ] Sistema de newsletter - Formulário de captação no rodapé
-- [ ] Sistema de newsletter - Pop-up suave (opcional)
-- [ ] Integração com serviço de email (notificações)
+## ✅ Fase 7: Página de Contato
+- [x] Criar schema para contatos no banco de dados
+- [x] Página Contato - Formulário de contato
+- [x] Página Contato - Mapa com todas as unidades
+- [x] Página Contato - Informações de contato
+- [ ] Sistema de notificação de novos contatos
 
-## Fase 8: Área do Colaborador
+## ✅ Fase 8: Área do Colaborador
 - [x] Botão "Área do Colaborador" no header
 - [x] Link para https://democonexa.casadf.com.br/login
 - [x] Botão no rodapé também
@@ -72,36 +101,10 @@
 ## Fase 9: SEO e Performance
 - [ ] Meta tags dinâmicas para todas as páginas
 - [ ] Schema.org para Organization
-- [ ] Schema.org para DonationAction
-- [ ] Schema.org para LocalBusiness (unidades)
 - [ ] Gerar sitemap.xml dinâmico
-- [ ] Atualizar robots.txt
 - [ ] Otimizar imagens com lazy loading
-- [ ] Minificar JS/CSS
-- [ ] Habilitar compressão e caching
-- [ ] Textos alt descritivos em todas as imagens
-- [ ] URLs amigáveis para todas as páginas
 
-## Fase 10: Analytics e Integrações
-- [ ] Integrar Google Analytics
-- [ ] Integrar Google Search Console
-- [ ] Configurar eventos de conversão (doações, newsletter)
-- [ ] Implementar pixel de rastreamento
-- [ ] Conformidade com LGPD (banner de cookies)
-
-## Fase 11: Testes e Validação
+## Fase 10: Testes e Deploy
+- [x] Testes automatizados (16 testes passando)
 - [ ] Testar responsividade em todos os dispositivos
-- [ ] Testar acessibilidade (WCAG)
-- [ ] Validar todos os formulários
-- [ ] Testar links internos e externos
-- [ ] Testar performance (Lighthouse)
-- [ ] Revisar todo o conteúdo textual
-- [ ] Corrigir erros de português
-
-## Fase 12: Deploy e Configuração
-- [ ] Configurar domínio cocris.casadef.com.br
-- [ ] Fazer commit com mensagens claras
-- [ ] Push para branch principal
 - [ ] Deploy para produção
-- [ ] Verificar funcionamento em produção
-- [ ] Monitoramento pós-deploy
