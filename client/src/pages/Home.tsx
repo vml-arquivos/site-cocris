@@ -4,8 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import SEO from '@/components/SEO';
-import SchemaOrg from '@/components/SchemaOrg';
+import SEO, { organizationSchema } from '@/components/SEO';
 
 export default function Home() {
   const values = [
@@ -41,11 +40,11 @@ export default function Home() {
   return (
     <>
       <SEO 
-        title="COCRIS - Associação Beneficente Coração de Cristo"
-        description="A COCRIS é uma organização sem fins lucrativos dedicada à educação infantil e assistência social, promovendo o desenvolvimento de crianças em vulnerabilidade social através de valores éticos e educacionais."
-        keywords="COCRIS, educação infantil, assistência social, Brasília, CEPI, creche, desenvolvimento infantil"
+        title="COCRIS - Educação Infantil de Excelência | Transformando Vidas no DF"
+        description="A COCRIS administra 7 unidades de educação infantil no Distrito Federal, oferecendo ensino de qualidade e transformando vidas através da educação e do amor."
+        keywords="COCRIS, educação infantil, creche, CEPI, Brasília, DF, assistência social, crianças, desenvolvimento infantil, educação de qualidade, Recanto das Emas"
+        schema={organizationSchema}
       />
-      <SchemaOrg />
       
       <div className="min-h-screen flex flex-col">
         <Header />

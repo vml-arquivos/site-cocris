@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://cocris.org/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

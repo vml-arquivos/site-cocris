@@ -11,6 +11,7 @@ import BlogPost from "@/pages/BlogPost";
 import Doacoes from "@/pages/Doacoes";
 import Transparencia from "@/pages/Transparencia";
 import Contato from "@/pages/Contato";
+import Compliance from "@/pages/Compliance";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -28,6 +29,7 @@ function Router() {
       <Route path={"/doacoes"} component={Doacoes} />
       <Route path={"/transparencia"} component={Transparencia} />
       <Route path={"/contato"} component={Contato} />
+      <Route path={"/compliance"} component={Compliance} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

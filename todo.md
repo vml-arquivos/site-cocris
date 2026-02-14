@@ -1,32 +1,71 @@
-# CoCris Site - TODO List - ATUALIZAÇÃO URGENTE
+# CoCris Site - TODO List - DESENVOLVIMENTO COMPLETO
 
-## PRIORIDADE MÁXIMA - Alterações Solicitadas
+## FASE 1: Pesquisa e Extração de Conteúdo
+- [ ] Acessar cocris.org e mapear todas as páginas existentes
+- [ ] Extrair conteúdo completo de cada página
+- [ ] Coletar informações sobre projetos e programas
+- [ ] Documentar estrutura de navegação e menu
+- [ ] Salvar todo o conteúdo em arquivo de referência
 
-### Hero da Página Inicial
-- [x] Copiar nova imagem hero fornecida para client/public/images/
-- [x] Atualizar Home.tsx com nova imagem de fundo
-- [x] Reduzir overlay vermelho (de rgba(227, 30, 36, 0.85) para bg-primary/30)
-- [x] Remover degradê do overlay
-- [x] Garantir que imagem fique visível e não distorcida
+## FASE 2: Criação de Páginas Faltantes
+- [x] Criar página Compliance com políticas e código de ética
+- [ ] Criar página de Notícias/Blog com sistema de categorias
+- [ ] Criar páginas individuais para cada unidade (7 unidades)
+- [ ] Criar página de Projetos detalhada (Unnijovem, etc)
+- [ ] Criar página de Galeria de Fotos
+- [ ] Criar página de Eventos e Calendário
+- [ ] Adicionar todo o conteúdo real extraído do site original
 
-### Nomes Reais das Unidades
-- [x] Acessar cocris.org para coletar nomes oficiais de todas as unidades
-- [x] Atualizar banco de dados com nomes reais
-- [x] Atualizar todas as páginas que exibem nomes de unidades
-- [x] Verificar consistência em todo o site
+## FASE 3: Monetização Ética e Utilidade Pública
+- [ ] Implementar blog de notícias sobre educação infantil
+- [ ] Criar seção de guias educacionais para pais
+- [ ] Adicionar área de recursos pedagógicos gratuitos
+- [ ] Implementar sistema de parcerias e patrocínios
+- [ ] Criar seção de eventos e workshops pagos
+- [ ] Adicionar espaço para publicidade institucional
+- [ ] Implementar sistema de doações recorrentes
+- [ ] Criar programa de apadrinhamento de crianças
 
-### Imagem da Creche COCRIS
-- [x] Copiar imagem da fachada amarela/azul fornecida
-- [x] Atualizar banco de dados com nova imageUrl para Creche COCRIS
-- [x] Verificar exibição na página de unidades
+## FASE 4: SEO Avançado
+- [x] Implementar meta tags completas em todas as páginas
+- [x] Adicionar Schema.org markup (Organization, LocalBusiness, Article)
+- [x] Criar sitemap.xml dinâmico
+- [x] Implementar robots.txt otimizado
+- [ ] Adicionar Open Graph tags para redes sociais
+- [ ] Implementar Twitter Cards
+- [ ] Otimizar URLs e estrutura de links internos
+- [ ] Adicionar breadcrumbs em todas as páginas
+- [ ] Implementar lazy loading de imagens
+- [ ] Otimizar alt text de todas as imagens
 
-### Links do Menu (Header)
-- [x] Acessar cocris.org e mapear todas as páginas do menu
-- [x] Adicionar links faltantes no Header (Compliance, CEPIs e Creches, Notícias)
-- [ ] Criar página Compliance se necessário
-- [x] Testar navegação completa
+## FASE 5: Performance e Responsividade
+- [ ] Otimizar todas as imagens (WebP, compressão)
+- [ ] Implementar cache de assets
+- [ ] Minificar CSS e JavaScript
+- [ ] Testar responsividade em mobile, tablet e desktop
+- [ ] Implementar Progressive Web App (PWA)
+- [ ] Otimizar Core Web Vitals (LCP, FID, CLS)
+- [ ] Adicionar service worker para cache offline
+- [ ] Testar performance com Lighthouse
 
----
+## FASE 6: Funcionalidades Adicionais
+- [ ] Integrar Google Analytics 4
+- [ ] Adicionar Google Maps em todas as unidades
+- [ ] Implementar busca interna no site
+- [ ] Adicionar compartilhamento social em posts
+- [ ] Criar sistema de comentários moderados
+- [ ] Implementar newsletter com automação
+- [ ] Adicionar chat/WhatsApp button
+- [ ] Criar área de downloads (documentos, relatórios)
+
+## FASE 7: Deploy e Git
+- [x] Revisar todo o código e funcionalidades
+- [x] Criar documentação de deploy para Coolify
+- [ ] Configurar variáveis de ambiente para produção
+- [ ] Fazer commit de todas as alterações
+- [ ] Push para repositório GitHub
+- [ ] Criar guia de instalação e configuração
+- [ ] Documentar processo de backup e restore
 
 ## ✅ Concluído Anteriormente
 - [x] Logo oficial da COCRIS
@@ -34,6 +73,6 @@
 - [x] Estrutura base do site
 - [x] Sistema de blog e doações
 - [x] Newsletter e contato
-
-## Correções de Bugs
-- [x] Corrigir erro de tags <a> aninhadas na página Quem Somos
+- [x] Hero section com imagem real
+- [x] 7 unidades no banco de dados
+- [x] Correção de bug de <a> aninhado
