@@ -1,0 +1,9 @@
+{
+  "query": "\nUPDATE units SET unitName = 'CEPI Arara Canindé' WHERE slug = 'cepi-arara-caninde';\nUPDATE units SET unitName = 'CEPI Beija Flor' WHERE slug = 'cepi-beija-flor';\nUPDATE units SET unitName = 'Creche COCRIS', imageUrl = '/images/units/creche-cocris-fachada.jpg' WHERE slug = 'creche-cocris';\nUPDATE units SET unitName = 'CEPI Flamboyant' WHERE slug = 'cepi-flamboyant';\nUPDATE units SET unitName = 'Creche Pelicano' WHERE slug = 'creche-pelicano';\nUPDATE units SET unitName = 'Creche Rouxinol' WHERE slug = 'creche-rouxinol';\nUPDATE units SET unitName = 'CEPI Sabiá do Campo' WHERE slug = 'cepi-sabia-do-campo';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 6QM5fqpefCB2cSG.root --database UndBHAye44ZxbMr8NusKWm --execute \nUPDATE units SET unitName = 'CEPI Arara Canindé' WHERE slug = 'cepi-arara-caninde';\nUPDATE units SET unitName = 'CEPI Beija Flor' WHERE slug = 'cepi-beija-flor';\nUPDATE units SET unitName = 'Creche COCRIS', imageUrl = '/images/units/creche-cocris-fachada.jpg' WHERE slug = 'creche-cocris';\nUPDATE units SET unitName = 'CEPI Flamboyant' WHERE slug = 'cepi-flamboyant';\nUPDATE units SET unitName = 'Creche Pelicano' WHERE slug = 'creche-pelicano';\nUPDATE units SET unitName = 'Creche Rouxinol' WHERE slug = 'creche-rouxinol';\nUPDATE units SET unitName = 'CEPI Sabiá do Campo' WHERE slug = 'cepi-sabia-do-campo';\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 94
+}

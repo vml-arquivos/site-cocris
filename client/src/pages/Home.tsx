@@ -56,10 +56,10 @@ export default function Home() {
             <div 
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: 'url(/images/activities/evento-1.jpg)',
+                backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663355075489/ppuBdPmxegwdlNhk.png)',
               }}
             />
-            <div className="hero-overlay" />
+            <div className="absolute inset-0 bg-primary/30" />
             
             <div className="container relative z-10 text-white text-center animate-fade-in-up">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">

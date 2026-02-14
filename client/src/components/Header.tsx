@@ -9,11 +9,12 @@ export default function Header() {
 
   const navLinks = [
     { label: 'Início', href: '/' },
-    { label: 'Quem Somos', href: '/quem-somos' },
-    { label: 'Nossas Unidades', href: '/unidades' },
+    { label: 'Sobre Nós', href: '/quem-somos' },
+    { label: 'CEPIs e Creches', href: '/unidades' },
     { label: 'Projetos', href: '/projetos' },
-    { label: 'Blog', href: '/blog' },
+    { label: 'Notícias', href: '/blog' },
     { label: 'Transparência', href: '/transparencia' },
+    { label: 'Compliance', href: '/compliance' },
     { label: 'Contato', href: '/contato' },
   ];
 
