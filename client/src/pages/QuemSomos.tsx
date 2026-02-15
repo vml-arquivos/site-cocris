@@ -185,11 +185,15 @@ export default function QuemSomos() {
               Visite uma de nossas unidades ou entre em contato para saber mais sobre nossos programas e como você pode contribuir.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/transparencia" className="btn-primary">
-                Ver Documentos
+              <Link href="/transparencia">
+                <a className="btn-primary">
+                  Ver Documentos
+                </a>
               </Link>
-              <Link href="/contato" className="btn-outline">
-                Entrar em Contato
+              <Link href="/contato">
+                <a className="btn-outline">
+                  Entrar em Contato
+                </a>
               </Link>
             </div>
           </div>

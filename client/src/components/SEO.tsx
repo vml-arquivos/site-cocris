@@ -6,11 +6,7 @@ interface SEOProps {
   keywords?: string;
   image?: string;
   url?: string;
-  type?: 'website' | 'article' | 'organization';
-  author?: string;
-  publishedTime?: string;
-  modifiedTime?: string;
-  schema?: object;
+  type?: 'website' | 'article';
 }
 
 export default function SEO({
@@ -20,10 +16,6 @@ export default function SEO({
   image = '/images/children-learning.webp',
   url = typeof window !== 'undefined' ? window.location.href : '',
   type = 'website',
-  author,
-  publishedTime,
-  modifiedTime,
-  schema,
 }: SEOProps) {
   useEffect(() => {
     // Update document title
@@ -68,85 +60,7 @@ export default function SEO({
     updateMetaTag('language', 'Portuguese');
     updateMetaTag('revisit-after', '7 days');
 
-    // Article specific tags
-    if (type === 'article') {
-      if (author) updateMetaTag('article:author', author, true);
-      if (publishedTime) updateMetaTag('article:published_time', publishedTime, true);
-      if (modifiedTime) updateMetaTag('article:modified_time', modifiedTime, true);
-    }
-
-    // Schema.org JSON-LD
-    if (schema) {
-      let schemaScript = document.querySelector('script[type="application/ld+json"]');
-      
-      if (!schemaScript) {
-        schemaScript = document.createElement('script');
-        schemaScript.setAttribute('type', 'application/ld+json');
-        document.head.appendChild(schemaScript);
-      }
-      
-      schemaScript.textContent = JSON.stringify(schema);
-    }
-
-  }, [title, description, keywords, image, url, type, author, publishedTime, modifiedTime, schema]);
+  }, [title, description, keywords, image, url, type]);
 
   return null;
 }
-
-// Schema.org helpers
-export const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Associação Beneficente Coração de Cristo - COCRIS',
-  alternateName: 'COCRIS',
-  url: 'https://cocris.org',
-  logo: 'https://cocris.org/wp-content/uploads/2021/03/logo-cocris.png',
-  description: 'Organização sem fins lucrativos dedicada à educação infantil e assistência social no Distrito Federal.',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Avenida Recanto das Emas, Quadra 301, Lote 26',
-    addressLocality: 'Brasília',
-    addressRegion: 'DF',
-    addressCountry: 'BR',
-  },
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: '+55-61-3575-4125',
-    contactType: 'customer service',
-    email: 'contato@cocris.org',
-    availableLanguage: 'Portuguese',
-  },
-  sameAs: [
-    'https://www.facebook.com/cocris',
-    'https://www.instagram.com/cocris',
-  ],
-};
-
-export const createArticleSchema = (
-  title: string,
-  description: string,
-  image: string,
-  datePublished: string,
-  dateModified: string,
-  author: string = 'COCRIS'
-) => ({
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: title,
-  description: description,
-  image: image,
-  datePublished: datePublished,
-  dateModified: dateModified,
-  author: {
-    '@type': 'Organization',
-    name: author,
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'COCRIS',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://cocris.org/wp-content/uploads/2021/03/logo-cocris.png',
-    },
-  },
-});
