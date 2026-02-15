@@ -7,6 +7,7 @@ import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
+import { generateSitemap } from "../sitemap";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -35,6 +36,31 @@ async function startServer() {
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   // OAuth callback under /api/oauth/callback
   registerOAuthRoutes(app);
+  
+  // Sitemap.xml
+  app.get('/sitemap.xml', async (req, res) => {
+    try {
+      const protocol = req.protocol;
+      const host = req.get('host') || 'localhost:3000';
+      const baseUrl = `${protocol}://${host}`;
+      const sitemap = await generateSitemap(baseUrl);
+      res.header('Content-Type', 'application/xml');
+      res.send(sitemap);
+    } catch (error) {
+      console.error('[Sitemap] Error generating sitemap:', error);
+      res.status(500).send('Error generating sitemap');
+    }
+  });
+  
+  // Robots.txt
+  app.get('/robots.txt', (req, res) => {
+    const protocol = req.protocol;
+    const host = req.get('host') || 'localhost:3000';
+    const baseUrl = `${protocol}://${host}`;
+    res.type('text/plain');
+    res.send(`User-agent: *\nAllow: /\nSitemap: ${baseUrl}/sitemap.xml`);
+  });
+  
   // tRPC API
   app.use(
     "/api/trpc",

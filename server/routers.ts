@@ -21,6 +21,7 @@ import {
   getProjectBySlug,
   getTransparencyDocuments,
 } from "./db";
+import { createCheckoutSession, createPixPayment, getPaymentStatus } from "./stripe";
 
 export const appRouter = router({
   system: systemRouter,
@@ -152,7 +153,8 @@ export const appRouter = router({
         message: z.string().optional(),
       }))
       .mutation(async ({ input }) => {
-        await createDonation({
+        // Criar doação no banco
+        const donation = await createDonation({
           donorName: input.donorName,
           donorEmail: input.donorEmail,
           donorPhone: input.donorPhone,
@@ -168,6 +170,45 @@ export const appRouter = router({
           receiptSent: false,
         });
         return { success: true };
+      }),
+    
+    createCheckout: publicProcedure
+      .input(z.object({
+        amount: z.number().min(100),
+        frequency: z.enum(['once', 'monthly']),
+        donorEmail: z.string().email().optional(),
+        donorName: z.string().optional(),
+        destination: z.string().optional(),
+        message: z.string().optional(),
+        isAnonymous: z.boolean().default(false),
+      }))
+      .mutation(async ({ input, ctx }) => {
+        const origin = ctx.req.headers.origin || 'http://localhost:3000';
+        const session = await createCheckoutSession({
+          ...input,
+          successUrl: `${origin}/doacoes/sucesso?session_id={CHECKOUT_SESSION_ID}`,
+          cancelUrl: `${origin}/doacoes?canceled=true`,
+        });
+        return session;
+      }),
+    
+    createPixPayment: publicProcedure
+      .input(z.object({
+        amount: z.number().min(100),
+        donorEmail: z.string().email().optional(),
+        donorName: z.string().optional(),
+        destination: z.string().optional(),
+        message: z.string().optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const payment = await createPixPayment(input);
+        return payment;
+      }),
+    
+    getPaymentStatus: publicProcedure
+      .input(z.object({ paymentIntentId: z.string() }))
+      .query(async ({ input }) => {
+        return await getPaymentStatus(input.paymentIntentId);
       }),
     
     getTotals: publicProcedure.query(async () => {

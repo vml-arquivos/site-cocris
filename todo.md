@@ -40,3 +40,51 @@
 - [x] Atualizar banco de dados com informações da Creche Rouxinol
 - [x] Adicionar foto da Creche Rouxinol ao projeto
 - [x] Atualizar contador de unidades de 6 para 7
+
+## FINALIZAÇÃO COMPLETA DO SITE - DEPLOY READY
+
+### 1. Imagens Reais das Unidades
+- [x] Buscar e adicionar fotos reais das 7 unidades educacionais
+- [x] Otimizar imagens para web (compressão, tamanho adequado)
+- [x] Adicionar alt text descritivo em todas as imagens
+
+### 2. Integração de Dados Reais
+- [x] Criar script seed-units.mjs com dados do units.json
+- [x] Popular banco de dados com informações completas das 7 unidades
+- [x] Adicionar coordenadas GPS para mapa interativo
+- [x] Atualizar estatísticas reais (anos de história, crianças atendidas)
+
+### 3. Sistema de Pagamentos Real
+- [x] Integrar Stripe com chaves de teste (estrutura base criada)
+- [x] Implementar fluxo completo de doação (cartão + PIX) (estrutura base)
+- [ ] Adicionar geração de QR Code PIX (requer configuração Stripe)
+- [ ] Implementar webhook para confirmação de pagamento (endpoint criado)
+- [ ] Criar email automático de agradecimento
+- [ ] Adicionar termômetro de metas de arrecadação
+
+### 4. Páginas com Conteúdo Real
+- [x] Completar página Compliance com textos reais
+- [x] Revisar página Transparência com documentos reais
+- [ ] Atualizar página Projetos com metas e progressos
+- [ ] Adicionar página Unnijovem com descrição completa
+
+### 5. SEO e Acessibilidade
+- [x] Implementar Schema.org (Organization, EducationalOrganization, DonationAction)
+- [x] Criar sitemap.xml dinâmico para Google Search Console
+- [x] Adicionar meta tags completas em todas as páginas
+- [ ] Implementar aria-labels e melhorar acessibilidade
+- [ ] Verificar contraste de cores e responsividade
+
+### 6. Configuração de Deploy
+- [x] Criar arquivo .env.example com todas as variáveis (ENV_CONFIG.md)
+- [x] Documentar processo de deploy no Coolify
+- [ ] Configurar domínio cocris.casadef.com.br
+- [ ] Testar build com pnpm build
+- [ ] Validar todas as rotas após deploy
+
+### 7. Testes Finais
+- [ ] Testar fluxo completo de doação
+- [ ] Verificar todas as páginas e navegação
+- [ ] Testar responsividade em mobile/tablet/desktop
+- [ ] Validar formulários de contato e newsletter
+- [ ] Testar performance e otimizações
