@@ -34,3 +34,9 @@
 - [x] Estrutura base do site
 - [x] Sistema de blog e doações
 - [x] Newsletter e contato
+
+## Correções Urgentes
+- [x] Adicionar Creche Rouxinol como 7ª unidade (Água Quente)
+- [x] Atualizar banco de dados com informações da Creche Rouxinol
+- [x] Adicionar foto da Creche Rouxinol ao projeto
+- [x] Atualizar contador de unidades de 6 para 7

@@ -17,7 +17,7 @@ export default function Unidades() {
           <div className="container text-white text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Nossas Unidades Educacionais</h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-              Administramos 6 unidades de educação infantil no Distrito Federal, oferecendo educação de qualidade, alimentação nutritiva e um ambiente acolhedor para centenas de crianças
+              Administramos 7 unidades de educação infantil no Distrito Federal, oferecendo educação de qualidade, alimentação nutritiva e um ambiente acolhedor para centenas de crianças
             </p>
           </div>
         </section>
