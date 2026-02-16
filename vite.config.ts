@@ -169,7 +169,9 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
-    host: true,
+    host: '0.0.0.0',
+    port: 3001,
+    strictPort: true, // Falha se a 3001 estiver ocupada
     allowedHosts: [
       ".manuspre.computer",
       ".manus.computer",
@@ -183,5 +185,9 @@ export default defineConfig({
       strict: true,
       deny: ["**/.*"],
     },
+  },
+  preview: {
+    host: '0.0.0.0',
+    port: 3001,
   },
 });

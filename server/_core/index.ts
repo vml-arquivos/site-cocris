@@ -19,7 +19,7 @@ function isPortAvailable(port: number): Promise<boolean> {
   });
 }
 
-async function findAvailablePort(startPort: number = 3000): Promise<number> {
+async function findAvailablePort(startPort: number = 3001): Promise<number> {
   for (let port = startPort; port < startPort + 20; port++) {
     if (await isPortAvailable(port)) {
       return port;
@@ -41,7 +41,7 @@ async function startServer() {
   app.get('/sitemap.xml', async (req, res) => {
     try {
       const protocol = req.protocol;
-      const host = req.get('host') || 'localhost:3000';
+      const host = req.get('host') || 'localhost:3001';
       const baseUrl = `${protocol}://${host}`;
       const sitemap = await generateSitemap(baseUrl);
       res.header('Content-Type', 'application/xml');
@@ -55,7 +55,7 @@ async function startServer() {
   // Robots.txt
   app.get('/robots.txt', (req, res) => {
     const protocol = req.protocol;
-    const host = req.get('host') || 'localhost:3000';
+    const host = req.get('host') || 'localhost:3001';
     const baseUrl = `${protocol}://${host}`;
     res.type('text/plain');
     res.send(`User-agent: *\nAllow: /\nSitemap: ${baseUrl}/sitemap.xml`);
@@ -76,15 +76,13 @@ async function startServer() {
     serveStatic(app);
   }
 
-  const preferredPort = parseInt(process.env.PORT || "3000");
-  const port = await findAvailablePort(preferredPort);
+  // Configuração Obrigatória de Rede para Coolify
+  const PORT = Number(process.env.PORT) || 3001; // Padrão 3001 para não conflitar com Backend
+  const HOST = '0.0.0.0'; // Obrigatório para Docker/Coolify
 
-  if (port !== preferredPort) {
-    console.log(`Port ${preferredPort} is busy, using port ${port} instead`);
-  }
-
-  server.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}/`);
+  server.listen(PORT, HOST, () => {
+    console.log(`✅ Server running on http://${HOST}:${PORT}`);
+    console.log(`📡 Network: Site Cocris is ready on port ${PORT}`);
   });
 }
 

@@ -88,3 +88,10 @@
 - [ ] Testar responsividade em mobile/tablet/desktop
 - [ ] Validar formulários de contato e newsletter
 - [ ] Testar performance e otimizações
+
+## Configuração de Porta para Coolify (Urgente)
+- [x] Configurar servidor para porta 3001 (evitar conflito com backend na 3000)
+- [x] Forçar host 0.0.0.0 no server/_core/index.ts
+- [x] Atualizar vite.config.ts com porta 3001 e strictPort
+- [x] Criar nixpacks.json para Node 20
+- [x] Testar servidor na porta 3001
