@@ -15,6 +15,7 @@ export default function Header() {
     { label: 'Notícias', href: '/blog' },
     { label: 'Transparência', href: '/transparencia' },
     { label: 'Compliance', href: '/compliance' },
+    { label: 'Trabalhe Conosco', href: '/trabalhe-conosco' },
     { label: 'Contato', href: '/contato' },
   ];
 

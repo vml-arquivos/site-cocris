@@ -15,6 +15,13 @@
       "when": 1771039906069,
       "tag": "0001_chunky_joseph",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1771292454216,
+      "tag": "0002_cute_warbound",
+      "breakpoints": true
     }
   ]
 }

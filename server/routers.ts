@@ -20,6 +20,7 @@ import {
   getAllProjects,
   getProjectBySlug,
   getTransparencyDocuments,
+  createJobApplication,
 } from "./db";
 import { createCheckoutSession, createPixPayment, getPaymentStatus } from "./stripe";
 
@@ -238,6 +239,37 @@ export const appRouter = router({
       }))
       .query(async ({ input }) => {
         return await getTransparencyDocuments(input.category, input.year);
+      }),
+  }),
+
+  // Job applications endpoints
+  jobs: router({
+    submit: publicProcedure
+      .input(z.object({
+        fullName: z.string().min(3, "Nome completo é obrigatório"),
+        email: z.string().email("Email inválido"),
+        phone: z.string().min(10, "Telefone inválido"),
+        cpf: z.string().length(14, "CPF inválido"),
+        birthDate: z.string().regex(/^\d{2}\/\d{2}\/\d{4}$/, "Data inválida"),
+        address: z.string().min(10, "Endereço completo é obrigatório"),
+        city: z.string().min(2, "Cidade é obrigatória"),
+        state: z.string().length(2, "Estado inválido"),
+        zipCode: z.string().regex(/^\d{5}-\d{3}$/, "CEP inválido"),
+        position: z.string().min(3, "Cargo desejado é obrigatório"),
+        unitId: z.number().optional(),
+        education: z.string().min(3, "Escolaridade é obrigatória"),
+        experience: z.string().optional(),
+        skills: z.string().optional(),
+        availability: z.string().optional(),
+        resumeUrl: z.string().optional(),
+        coverLetter: z.string().optional(),
+      }))
+      .mutation(async ({ input }) => {
+        await createJobApplication(input);
+        return {
+          success: true,
+          message: "Candidatura enviada com sucesso! Entraremos em contato em breve.",
+        };
       }),
   }),
 });

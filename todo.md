@@ -95,3 +95,14 @@
 - [x] Atualizar vite.config.ts com porta 3001 e strictPort
 - [x] Criar nixpacks.json para Node 20
 - [x] Testar servidor na porta 3001
+
+## Implementação Trabalhe Conosco e Correções de Rotas
+- [ ] Criar schema de candidaturas no banco de dados
+- [ ] Executar migração: pnpm db:push
+- [ ] Implementar endpoint backend para candidaturas
+- [ ] Criar página Trabalhe Conosco completa
+- [ ] Corrigir links das unidades para usar slug (não ID)
+- [ ] Corrigir rota dinâmica de detalhes da unidade
+- [ ] Adicionar link Trabalhe Conosco no menu
+- [ ] Testar build de produção
+- [ ] Commit e push para GitHub

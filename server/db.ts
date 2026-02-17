@@ -19,7 +19,9 @@ import {
   projects,
   InsertProject,
   transparencyDocuments,
-  InsertTransparencyDocument
+  InsertTransparencyDocument,
+  jobApplications,
+  InsertJobApplication
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
@@ -296,4 +298,30 @@ export async function getTransparencyDocuments(category?: string, year?: number)
     .from(transparencyDocuments)
     .where(and(...conditions))
     .orderBy(desc(transparencyDocuments.year), desc(transparencyDocuments.month));
+}
+
+
+// ============ JOB APPLICATIONS HELPERS ============
+
+export async function createJobApplication(application: InsertJobApplication) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("[Database] Cannot create job application: database not available");
+  }
+  
+  const result = await db.insert(jobApplications).values(application);
+  return result;
+}
+
+export async function getAllJobApplications() {
+  const db = await getDb();
+  if (!db) return [];
+  return await db.select().from(jobApplications).orderBy(desc(jobApplications.createdAt));
+}
+
+export async function getJobApplicationById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(jobApplications).where(eq(jobApplications.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
 }

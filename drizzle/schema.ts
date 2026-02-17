@@ -215,3 +215,36 @@ export const transparencyDocuments = mysqlTable("transparencyDocuments", {
 
 export type TransparencyDocument = typeof transparencyDocuments.$inferSelect;
 export type InsertTransparencyDocument = typeof transparencyDocuments.$inferInsert;
+
+/**
+ * Job applications (Trabalhe Conosco)
+ */
+export const jobApplications = mysqlTable("jobApplications", {
+  id: int("id").autoincrement().primaryKey(),
+  fullName: varchar("fullName", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  phone: varchar("phone", { length: 50 }).notNull(),
+  cpf: varchar("cpf", { length: 14 }).notNull(),
+  birthDate: varchar("birthDate", { length: 10 }).notNull(),
+  address: text("address").notNull(),
+  city: varchar("city", { length: 100 }).notNull(),
+  state: varchar("state", { length: 2 }).notNull(),
+  zipCode: varchar("zipCode", { length: 10 }).notNull(),
+  position: varchar("position", { length: 255 }).notNull(),
+  unitId: int("unitId").references(() => units.id),
+  education: varchar("education", { length: 255 }).notNull(),
+  experience: text("experience"),
+  skills: text("skills"),
+  availability: varchar("availability", { length: 100 }),
+  resumeUrl: text("resumeUrl"),
+  coverLetter: text("coverLetter"),
+  status: mysqlEnum("status", ["new", "reviewing", "interview", "approved", "rejected"]).default("new").notNull(),
+  reviewedAt: timestamp("reviewedAt"),
+  reviewedBy: int("reviewedBy").references(() => users.id),
+  notes: text("notes"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type JobApplication = typeof jobApplications.$inferSelect;
+export type InsertJobApplication = typeof jobApplications.$inferInsert;
