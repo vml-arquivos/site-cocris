@@ -1,6 +1,16 @@
 {
   "providers": ["node"],
   "variables": {
-    "NIXPACKS_NODE_VERSION": "20"
+    "NIXPACKS_NODE_VERSION": "20",
+    "NODE_ENV": "production",
+    "PORT": "3001"
+  },
+  "phases": {
+    "build": {
+      "cmds": ["pnpm run build"]
+    }
+  },
+  "start": {
+    "cmd": "pnpm start"
   }
 }
