@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Link } from 'wouter';
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,40 +8,42 @@ export default function Header() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinks = [
-    { label: 'Início', href: '/' },
-    { label: 'Sobre Nós', href: '/quem-somos' },
-    { label: 'CEPIs e Creches', href: '/unidades' },
-    { label: 'Projetos', href: '/projetos' },
-    { label: 'Notícias', href: '/blog' },
-    { label: 'Transparência', href: '/transparencia' },
-    { label: 'Compliance', href: '/compliance' },
-    { label: 'Trabalhe Conosco', href: '/trabalhe-conosco' },
-    { label: 'Contato', href: '/contato' },
+    { label: "Início", href: "/" },
+    { label: "Sobre Nós", href: "/quem-somos" },
+    { label: "CEPIs e Creches", href: "/unidades" },
+    { label: "Projetos", href: "/projetos" },
+    { label: "Notícias", href: "/blog" },
+    { label: "Transparência", href: "/transparencia" },
+    { label: "Compliance", href: "/compliance" },
+    { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },
+    { label: "Contato", href: "/contato" },
   ];
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
-      <div className="container flex items-center justify-between h-20">
+      <div className="container flex min-h-20 items-center gap-x-5 gap-y-2 py-3 xl:flex-nowrap xl:gap-x-6">
         {/* Logo - Official COCRIS */}
-        <Link href="/">
+        <Link href="/" className="shrink-0">
           <div className="flex items-center gap-3 font-bold text-lg hover:opacity-90 transition-opacity cursor-pointer">
-            <img 
-              src="/images/logo-cocris.png" 
-              alt="Logo COCRIS - Associação Beneficente Coração de Cristo" 
-              className="h-14 w-auto"
+            <img
+              src="/images/logo-cocris.png"
+              alt="Logo COCRIS - Associação Beneficente Coração de Cristo"
+              className="h-14 w-auto max-w-[150px] object-contain"
             />
             <div className="hidden sm:flex flex-col">
               <span className="text-primary font-bold text-sm">COCRIS</span>
-              <span className="text-xs text-secondary font-semibold">Educação Infantil</span>
+              <span className="text-xs text-secondary font-semibold">
+                Educação Infantil
+              </span>
             </div>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href}>
-              <span className="text-foreground hover:text-primary font-semibold transition-colors duration-300 relative group text-sm cursor-pointer">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-x-4 2xl:gap-x-6 xl:flex">
+          {navLinks.map(link => (
+            <Link key={link.href} href={link.href} className="shrink-0">
+              <span className="text-foreground hover:text-primary font-semibold transition-colors duration-300 relative group whitespace-nowrap text-xs 2xl:text-sm cursor-pointer">
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </span>
@@ -50,26 +52,27 @@ export default function Header() {
         </nav>
 
         {/* CTA Buttons */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden shrink-0 items-center gap-2 xl:flex">
           <a
             href="https://democonexa.casadf.com.br/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline text-sm" style={{fontSize: '12px', fontWeight: '500'}}
+            className="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-lg border-2 border-primary px-3 py-2 text-xs font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground 2xl:px-4 2xl:text-sm"
           >
             Área do Colaborador
           </a>
-          <Link href="/doacoes">
-            <button className="btn-primary text-sm" style={{fontSize: '12px'}}>
-              Fazer Doação
-            </button>
+          <Link
+            href="/doacoes"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-lg bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 2xl:text-sm"
+          >
+            Fazer Doação
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile/tablet Menu Button */}
         <button
           onClick={toggleMenu}
-          className="lg:hidden p-2 hover:bg-muted rounded-lg transition-colors"
+          className="ml-auto rounded-lg p-2 transition-colors hover:bg-muted xl:hidden"
           aria-label="Toggle menu"
         >
           {isOpen ? (
@@ -82,9 +85,9 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <nav className="lg:hidden bg-muted border-t border-border">
+        <nav className="xl:hidden bg-muted border-t border-border">
           <div className="container py-4 space-y-3">
-            {navLinks.map((link) => (
+            {navLinks.map(link => (
               <Link key={link.href} href={link.href}>
                 <span
                   className="block px-4 py-2 text-foreground hover:bg-white hover:text-primary rounded-lg transition-colors cursor-pointer"
